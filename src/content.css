@@ -1,0 +1,38 @@
+/* Injected on every page — only affects our own toast + the fill highlight. */
+.afv-filled-highlight {
+  animation: afv-pulse 1.6s ease-out;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.55) !important;
+  border-radius: 6px;
+}
+@keyframes afv-pulse {
+  0%   { box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.75); }
+  100% { box-shadow: 0 0 0 3px rgba(99, 102, 241, 0); }
+}
+
+#afv-toast-host {
+  position: fixed;
+  z-index: 2147483647;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+.afv-toast {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: #111827;
+  padding: 11px 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease;
+  max-width: 320px;
+}
+.afv-toast.show { opacity: 1; transform: translateY(0); }
+.afv-toast.ok { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+.afv-toast.warn { background: linear-gradient(135deg, #f59e0b, #f97316); }

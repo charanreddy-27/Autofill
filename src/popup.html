@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="popup.css" />
+  <title>Autofill Vault</title>
+</head>
+<body>
+  <header class="p-head">
+    <div class="p-brand"><span class="p-mark">🔐</span> Autofill Vault</div>
+    <button id="open-dash" class="p-icon" title="Open dashboard">⚙️</button>
+  </header>
+
+  <button id="fill-page" class="p-fill">⚡ Fill this page</button>
+  <div id="site-label" class="p-site"></div>
+
+  <div id="accounts-section" class="p-section hidden">
+    <div class="p-section-title">Accounts for this site</div>
+    <div id="accounts-list"></div>
+  </div>
+
+  <div class="p-section">
+    <div class="p-search-wrap">
+      <input id="p-search" placeholder="Search & copy a detail…" autocomplete="off" />
+    </div>
+    <div id="results" class="p-results"></div>
+  </div>
+
+  <footer class="p-foot">
+    <button id="open-dash-2" class="p-link">Open full dashboard →</button>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

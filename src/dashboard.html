@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autofill Vault</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">🔐</div>
+      <div>
+        <h1>Autofill Vault</h1>
+        <p id="greeting">Your details, one click away</p>
+      </div>
+    </div>
+
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" class="search-icon"><path d="M21 21l-4.3-4.3M11 19a8 8 0 100-16 8 8 0 000 16z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="search" type="text" placeholder="Search anything…  (name, email, account…)" autocomplete="off" />
+    </div>
+
+    <div class="topbar-actions">
+      <button id="theme-toggle" class="icon-btn" title="Toggle theme">🌙</button>
+      <div class="menu">
+        <button id="settings-btn" class="icon-btn" title="Settings">⚙️</button>
+        <div id="settings-menu" class="menu-pop hidden">
+          <button data-action="export">⬇️ Export backup</button>
+          <button data-action="import">⬆️ Import backup</button>
+          <label class="menu-toggle"><input type="checkbox" id="toast-toggle" checked /> Show fill toast</label>
+          <hr/>
+          <button data-action="reset" class="danger">♻️ Reset everything</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-view="profile">👤 Profile</button>
+    <button class="tab" data-view="accounts">🔑 Accounts</button>
+    <span class="tab-spacer"></span>
+    <span id="vault-stats" class="stats-chip"></span>
+    <button id="primary-add" class="btn-primary">＋ Add</button>
+  </nav>
+
+  <main id="content" class="content"></main>
+
+  <!-- Modal -->
+  <div id="modal-backdrop" class="modal-backdrop hidden">
+    <div class="modal" id="modal"></div>
+  </div>
+
+  <input type="file" id="import-file" accept="application/json" class="hidden" />
+
+  <script src="common.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
