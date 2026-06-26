@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Project — How Autofill Vault was built</title>
+  <meta name="description" content="The why, the build timeline, the technical decisions and the part that broke everything. A deep dive into Autofill Vault, a local-first browser extension by Charan Reddy Chanda." />
+  <meta name="author" content="Chanda Charan Reddy" />
+  <meta name="theme-color" content="#6366f1" />
+  <link rel="canonical" href="https://autofill-vault.vercel.app/about-project" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Autofill Vault" />
+  <meta property="og:title" content="The Project — How Autofill Vault was built" />
+  <meta property="og:description" content="The why, the timeline, the technical decisions and the part that broke everything." />
+  <meta property="og:url" content="https://autofill-vault.vercel.app/about-project" />
+  <meta property="og:image" content="https://autofill-vault.vercel.app/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Project — How Autofill Vault was built" />
+  <meta name="twitter:description" content="The why, the timeline, and the part that broke everything." />
+  <meta name="twitter:image" content="https://autofill-vault.vercel.app/assets/og.png" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/icon-128.png" />
+  <link rel="apple-touch-icon" href="assets/icon-128.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;850&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/" aria-label="Autofill Vault home">
+        <span class="brand-mark">🔐</span>
+        <span class="brand-text">Autofill Vault <span>/ extension</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/#features">Features</a>
+        <a href="/#how">How it works</a>
+        <a href="/about-project" class="active">The project</a>
+        <a href="/about">About me</a>
+        <a href="https://github.com/charanreddy-27/Autofill" target="_blank" rel="noopener">GitHub ↗</a>
+      </nav>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">🌙</button>
+      <a class="btn btn-primary btn-sm nav-cta" href="https://github.com/charanreddy-27/Autofill" target="_blank" rel="noopener">Get it</a>
+      <button class="nav-burger" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="reveal" style="max-width:760px;">
+        <span class="eyebrow">📓 About the project</span>
+        <h1>The story of a tool I built so I'd never type my phone number again.</h1>
+        <p class="lead">Autofill Vault started as a 1 a.m. shortcut and turned into a genuinely interesting engineering problem. Here's the why, the build, and the part that broke everything.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/charanreddy-27/Autofill" target="_blank" rel="noopener">View source on GitHub ↗</a>
+          <a class="btn btn-ghost" href="/#how">See the engine</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE WHY -->
+  <section class="section-pad" style="padding-top:48px;">
+    <div class="wrap">
+      <div class="prose reveal">
+        <span class="eyebrow">The why</span>
+        <h2 style="font-size:clamp(26px,3.5vw,36px);letter-spacing:-.8px;margin:16px 0 14px;font-weight:820;">It started with an itch, not a roadmap.</h2>
+        <p>I was deep in a job-application stretch — the kind where you fill the same six fields into a slightly different form forty times a week. Name. Email. Phone. City. LinkedIn. Portfolio. Browsers have built-in autofill, sure, but it's a black box: it fires when it feels like it, fumbles modern single-page apps, and you can't see or shape what it knows.</p>
+        <p>Password managers nailed this for logins. <strong>Nobody nailed it for everything else.</strong> So I built the thing I wanted: a vault I fully control, that fills any form on command, and that never sends a single byte to anyone's server. Local-first wasn't a feature decision — it was the whole point.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section-pad" style="padding-top:8px;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How it came together</span>
+        <h2>A realistic build timeline</h2>
+        <p>A few hours here and there over six months — including the week the whole thing quietly broke.</p>
+      </div>
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <div class="tl-date">January 2026 · The itch</div>
+          <h4>Ideation</h4>
+          <p>Sketched it after one too many application forms. One rule from day one: everything stays on-device. If it needs a server, it's the wrong design.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">February 2026 · Scoping</div>
+          <h4>Design &amp; constraints</h4>
+          <p>Chose Manifest V3, no framework, no build step — just the platform. Decided the vault would be category-based (Personal, Address, Education, Professional) so it maps to how forms actually group fields.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">March 2026 · It exists</div>
+          <h4>MVP — the vault &amp; copy buttons</h4>
+          <p>Built the dashboard: editable categories, inline autosave, a copy button on every field. Useful on its own before a single form was auto-filled. Shipped this to myself and started using it daily.</p>
+        </div>
+        <div class="tl-item hard">
+          <div class="tl-date">April 2026 · The part that broke everything</div>
+          <h4>The autofill engine — and the React wall</h4>
+          <p>Wrote the field-scoring engine, felt great, tested on a React job board — and watched every filled value <em>vanish on submit</em>. Setting <code>el.value</code> updates the DOM but not React's internal state, so the form submitted empty. Two evenings of confusion later: call the native value setter on the element prototype, then dispatch real <code>input</code>/<code>change</code> events. That one function is the reason this works at all.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">May 2026 · Rounding it out</div>
+          <h4>Accounts, popup &amp; shortcuts</h4>
+          <p>Added saved logins (with smart username detection for multi-step forms), the toolbar popup with search-and-copy, the right-click menu, and keyboard shortcuts (<code>Alt+Shift+F</code> to fill, <code>Alt+Shift+V</code> to open).</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">June 2026 · Polish &amp; launch</div>
+          <h4>Backup, theming &amp; this site</h4>
+          <p>JSON export/import, light/dark themes, the aurora-glass UI, and the showcase site you're reading — so the project could live somewhere other than my <code>chrome://extensions</code> page.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES + CHALLENGES -->
+  <section class="section-pad" style="padding-top:8px;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">The interesting bits</span>
+        <h2>Decisions &amp; challenges worth talking about</h2>
+        <p>Every one of these started as "that should be easy" and taught me otherwise.</p>
+      </div>
+      <div class="learn-grid">
+        <div class="learn reveal">
+          <div class="k">Challenge</div>
+          <h4>Filling forms that fight back</h4>
+          <p>React and Vue track input state internally, so a plain <code>value</code> assignment gets discarded. Solved by invoking the prototype's native setter, then firing bubbling <code>input</code>/<code>change</code>/<code>blur</code> events — indistinguishable from real typing.</p>
+        </div>
+        <div class="learn reveal">
+          <div class="k">Decision</div>
+          <h4>Scoring instead of one rule</h4>
+          <p>Rather than trust field names, the engine builds a weighted score: autocomplete token (100) &gt; native input type (60) &gt; exact label/synonym (25–50). A threshold keeps it from filling fields it isn't sure about.</p>
+        </div>
+        <div class="learn reveal">
+          <div class="k">Challenge</div>
+          <h4>Finding the username on a lonely page</h4>
+          <p>Multi-step logins show the username field on one screen and the password on the next. The engine picks the text/email input nearest <em>before</em> the password in document order — and falls back to a regex on the page's signals when there's no password at all.</p>
+        </div>
+        <div class="learn reveal">
+          <div class="k">Decision</div>
+          <h4>One shared brain, three contexts</h4>
+          <p><code>common.js</code> — the data model, field dictionary and storage helpers — loads identically in the dashboard, the popup, the content script and the service worker. One source of truth, zero duplication, no bundler.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="section-pad" style="padding-top:8px;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Tech stack</span>
+        <h2>Why each piece earned its place</h2>
+      </div>
+      <div class="stack-grid">
+        <div class="stack-card reveal"><div class="t">Manifest V3</div><div class="d">The current, future-proof extension model — service worker + scripting API. Why: it's where Chrome is going, full stop.</div></div>
+        <div class="stack-card reveal"><div class="t">Vanilla JS, no build</div><div class="d">Edit a file, hit reload. Why: a privacy tool should be trivially auditable — no bundle to read through, nothing hidden.</div></div>
+        <div class="stack-card reveal"><div class="t">chrome.storage.local</div><div class="d">On-device, per-profile, event-driven. Why: it's the honest answer to "where's my data?" — right here, nowhere else.</div></div>
+        <div class="stack-card reveal"><div class="t">Modern CSS only</div><div class="d"><code>color-mix</code>, custom properties, backdrop blur. Why: a polished UI without shipping a styling framework to do it.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKS / CTA -->
+  <section id="contact" class="section-pad" style="padding-top:8px;">
+    <div class="wrap">
+      <div class="contact-card reveal">
+        <div class="contact-grid">
+          <div>
+            <span class="eyebrow">Project links</span>
+            <h2 style="font-size:clamp(26px,3.5vw,36px);letter-spacing:-.8px;margin:16px 0 10px;font-weight:820;">Want to build something — or collaborate?</h2>
+            <p style="color:var(--text-soft);font-size:17px;margin:0;">The whole thing is open source. Read it, fork it, or tell me what you'd do differently. I'm always up for a good technical argument.</p>
+            <div style="display:grid;gap:10px;margin-top:22px;">
+              <a class="link-btn" href="https://github.com/charanreddy-27/Autofill" target="_blank" rel="noopener">
+                <span class="ic">💻</span><span>Source code<small>github.com/charanreddy-27/Autofill</small></span>
+              </a>
+              <a class="link-btn" href="https://www.linkedin.com/in/chandacharanreddy/" target="_blank" rel="noopener">
+                <span class="ic">📣</span><span>LinkedIn post<small>The launch write-up — coming soon</small></span>
+              </a>
+              <a class="link-btn" href="https://www.charanreddy.dev" target="_blank" rel="noopener">
+                <span class="ic">🌐</span><span>Portfolio<small>charanreddy.dev — the other 18 projects</small></span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <span class="eyebrow">Get in touch</span>
+            <h3 style="font-size:22px;letter-spacing:-.4px;margin:14px 0 6px;font-weight:780;">Let's talk.</h3>
+            <p style="color:var(--text-soft);margin:0 0 18px;">Pick whichever's easiest.</p>
+            <div class="contact-actions" style="grid-template-columns:1fr 1fr;">
+              <a class="btn btn-primary" href="https://cal.com/charanreddy-27/30min" target="_blank" rel="noopener">📅 Book a call</a>
+              <a class="btn btn-ghost" href="mailto:charanreddychanda@gmail.com">✉️ Email</a>
+              <a class="btn btn-ghost" href="https://github.com/charanreddy-27" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn btn-ghost" href="https://www.linkedin.com/in/chandacharanreddy/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <a class="btn btn-ghost" href="/about" style="width:100%;margin-top:11px;">More about me →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="/"><span class="brand-mark">🔐</span><span class="brand-text">Autofill Vault</span></a>
+          <p class="footer-tag">Store your details once. Fill any form in a click. Everything stays on your machine.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Project</h5>
+            <a href="/#features">Features</a>
+            <a href="/#how">How it works</a>
+            <a href="/about-project">About the project</a>
+            <a href="https://github.com/charanreddy-27/Autofill" target="_blank" rel="noopener">GitHub repo ↗</a>
+          </div>
+          <div class="footer-col">
+            <h5>Charan</h5>
+            <a href="/about">About me</a>
+            <a href="https://www.charanreddy.dev" target="_blank" rel="noopener">Portfolio ↗</a>
+            <a href="https://www.linkedin.com/in/chandacharanreddy/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://cal.com/charanreddy-27/30min" target="_blank" rel="noopener">Book a call ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Chanda Charan Reddy · Crafted with intent.</span>
+        <span class="avail"><span class="dot-live"></span> Available for new projects</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

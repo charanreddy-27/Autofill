@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a0b15"/>
+      <stop offset="1" stop-color="#11132a"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#818cf8"/>
+      <stop offset="0.55" stop-color="#c084fc"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="0.55" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#ec4899"/>
+    </linearGradient>
+    <radialGradient id="a1" cx="0" cy="0" r="1" gradientTransform="translate(120 60) scale(620)">
+      <stop offset="0" stop-color="#6366f1" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a2" cx="0" cy="0" r="1" gradientTransform="translate(1140 70) scale(560)">
+      <stop offset="0" stop-color="#ec4899" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#ec4899" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a3" cx="0" cy="0" r="1" gradientTransform="translate(1080 640) scale(560)">
+      <stop offset="0" stop-color="#14b8a6" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#14b8a6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#a1)"/>
+  <rect width="1200" height="630" fill="url(#a2)"/>
+  <rect width="1200" height="630" fill="url(#a3)"/>
+
+  <!-- brand mark -->
+  <g transform="translate(90 96)">
+    <rect width="116" height="116" rx="30" fill="url(#mark)"/>
+    <g fill="none" stroke="#fff" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="33" y="54" width="50" height="36" rx="8" fill="rgba(255,255,255,0.16)"/>
+      <path d="M42 54v-7a16 16 0 0 1 32 0v7"/>
+    </g>
+    <circle cx="58" cy="70" r="5.6" fill="#fff"/>
+    <rect x="55.6" y="73" width="4.8" height="10" rx="2.4" fill="#fff"/>
+  </g>
+
+  <text x="232" y="150" font-family="Inter, Segoe UI, sans-serif" font-size="34" font-weight="700" fill="#9aa0c4" letter-spacing="2">AUTOFILL VAULT</text>
+  <text x="232" y="190" font-family="Inter, Segoe UI, sans-serif" font-size="22" font-weight="600" fill="#6a7090" letter-spacing="0.5">Local-first browser extension</text>
+
+  <!-- headline -->
+  <text x="90" y="330" font-family="Inter, Segoe UI, sans-serif" font-size="78" font-weight="850" fill="#edeefb" letter-spacing="-2">Fill any form in</text>
+  <text x="90" y="424" font-family="Inter, Segoe UI, sans-serif" font-size="78" font-weight="850" letter-spacing="-2">
+    <tspan fill="url(#brand)">one click.</tspan><tspan fill="#edeefb"> On your machine.</tspan>
+  </text>
+
+  <text x="92" y="490" font-family="Inter, Segoe UI, sans-serif" font-size="27" font-weight="500" fill="#9aa0c4">Store your details once. No server, no sign-up, no cloud — works on React &amp; Vue sites.</text>
+
+  <!-- chips -->
+  <g font-family="Inter, Segoe UI, sans-serif" font-size="22" font-weight="700">
+    <g transform="translate(90 528)">
+      <rect width="210" height="52" rx="26" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+      <text x="28" y="34" fill="#c9d1f0">🔒 100% local</text>
+    </g>
+    <g transform="translate(318 528)">
+      <rect width="232" height="52" rx="26" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+      <text x="28" y="34" fill="#c9d1f0">⚡ One-click fill</text>
+    </g>
+    <g transform="translate(568 528)">
+      <rect width="248" height="52" rx="26" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+      <text x="28" y="34" fill="#c9d1f0">🧠 Real match engine</text>
+    </g>
+  </g>
+
+  <!-- author -->
+  <text x="1110" y="180" text-anchor="end" font-family="Inter, Segoe UI, sans-serif" font-size="23" font-weight="600" fill="#7a80a8">by Charan Reddy Chanda · charanreddy.dev</text>
+</svg>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Charan Reddy Chanda · Autofill Vault</title>
+  <meta name="description" content="I'm Charan — an AI & automation engineer in Bangalore. The story behind Autofill Vault, what I learned building it, and where to find the rest of my work." />
+  <meta name="author" content="Chanda Charan Reddy" />
+  <meta name="theme-color" content="#6366f1" />
+  <link rel="canonical" href="https://autofill-vault.vercel.app/about" />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Autofill Vault" />
+  <meta property="og:title" content="About — Charan Reddy Chanda" />
+  <meta property="og:description" content="AI & automation engineer in Bangalore. The story behind Autofill Vault and what I learned building it." />
+  <meta property="og:url" content="https://autofill-vault.vercel.app/about" />
+  <meta property="og:image" content="https://autofill-vault.vercel.app/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About — Charan Reddy Chanda" />
+  <meta name="twitter:description" content="AI & automation engineer. The story behind Autofill Vault." />
+  <meta name="twitter:image" content="https://autofill-vault.vercel.app/assets/og.png" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/icon-128.png" />
+  <link rel="apple-touch-icon" href="assets/icon-128.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;850&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/" aria-label="Autofill Vault home">
+        <span class="brand-mark">🔐</span>
+        <span class="brand-text">Autofill Vault <span>/ extension</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/#features">Features</a>
+        <a href="/#how">How it works</a>
+        <a href="/about-project">The project</a>
+        <a href="/about" class="active">About me</a>
+        <a href="https://github.com/charanreddy-27/Autofill" target="_blank" rel="noopener">GitHub ↗</a>
+      </nav>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">🌙</button>
+      <a class="btn btn-primary btn-sm nav-cta" href="https://www.charanreddy.dev" target="_blank" rel="noopener">Portfolio ↗</a>
+      <button class="nav-burger" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="profile">
+          <div class="avatar">CR</div>
+          <div>
+            <h3>Chanda Charan Reddy</h3>
+            <p class="role">AI &amp; Automation Engineer</p>
+            <p class="loc">📍 Bangalore, India · "I build intelligent systems."</p>
+            <div class="chips">
+              <span class="chip">LLM systems</span>
+              <span class="chip">Automation</span>
+              <span class="chip">Computer vision</span>
+              <span class="chip">Real-time control</span>
+              <span class="chip">Springer-published</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section-pad" style="padding-top:48px;">
+    <div class="wrap">
+      <div class="prose reveal">
+        <span class="eyebrow">Hi, I'm Charan</span>
+        <p class="lead-lg" style="margin:18px 0 0;">I ship production LLM systems for a living — from a Springer-published model that reads chest X-rays well enough for a radiologist to take seriously, to document pipelines that quietly run themselves.</p>
+        <p>Before any of that, I wrote real-time control code for jet engines at DRDO, where a millisecond of lag isn't a bug — it's a flameout. That job taught me to respect latency and distrust anything that "looks like magic in a notebook and falls apart in production."</p>
+        <p>Autofill Vault is the opposite kind of project: small, local, and built for an audience of one — me, at 1 a.m., on my fourteenth job application of the week, refusing to type my own phone number one more time. It turned out to be a surprisingly fun problem, so I made it good enough to share.</p>
+        <p style="font-size:16px;">This is one project. There are 18 more — and a few jet engines — over at <a href="https://www.charanreddy.dev" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700;text-decoration:none;">charanreddy.dev</a>. Consider this the side door.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I LEARNED -->
+  <section class="section-pad" style="padding-top:8px;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">The honest part</span>
+        <h2>What I learned building this</h2>
+        <p>No filler. The things that actually changed how I'd build the next one.</p>
+      </div>
+      <div class="learn-grid">
+        <div class="learn reveal">
+          <div class="k">01 · The framework problem</div>
+          <h4>Setting <code>.value</code> is a lie to React</h4>
+          <p>My first version "worked" — the text appeared, then vanished on submit because React never knew. The fix (calling the native prototype setter, then firing real input events) is the single most useful DOM trick I picked up all year.</p>
+        </div>
+        <div class="learn reveal">
+          <div class="k">02 · Matching, not guessing</div>
+          <h4>Real forms are gloriously inconsistent</h4>
+          <p>One site's "email" is another's <code>data-testid="contact_field_2"</code>. A weighted score across autocomplete tokens, types, labels and synonyms beats any single heuristic — and degrades gracefully when a site is weird.</p>
+        </div>
+        <div class="learn reveal">
+          <div class="k">03 · Restraint as a feature</div>
+          <h4>The best autofill knows when <em>not</em> to fill</h4>
+          <p>Skipping fields you already touched, and never overwriting your work, mattered more to how it <em>feels</em> than any amount of matching cleverness. Trust is built by what a tool refuses to do.</p>
+        </div>
+        <div class="learn reveal">
+          <div class="k">04 · Local-first is liberating</div>
+          <h4>No backend meant no excuses</h4>
+          <p>With everything in <code>chrome.storage.local</code>, there was nowhere to hide a slow API or a "we'll fix privacy later." The constraint made the product simpler and the threat model honest.</p>
+        </div>
+        <div class="learn reveal">
+          <div class="k">05 · The human one</div>
+          <h4>I'll happily over-build a tool to save 30 seconds</h4>
+          <p>And I've made peace with that. The five minutes a day this saves me is almost beside the point — the real payoff was the engineering puzzle, and admitting that to myself was its own small lesson.</p>
+        </div>
+        <div class="learn reveal" style="display:grid;place-content:center;background:var(--accent-grad);border:none;color:#fff;">
+          <div style="font-size:15px;font-weight:700;opacity:.9;">Want the technical version?</div>
+          <a href="/about-project" style="color:#fff;font-size:20px;font-weight:800;text-decoration:none;letter-spacing:-.3px;margin-top:4px;">Read the project deep-dive →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CARD (mirrors the portfolio) -->
+  <section id="contact" class="section-pad" style="padding-top:8px;">
+    <div class="wrap">
+      <div class="contact-card reveal">
+        <div class="contact-grid">
+          <div>
+            <span class="eyebrow">Let's talk</span>
+            <h2 style="font-size:clamp(26px,3.5vw,38px);letter-spacing:-.8px;margin:16px 0 10px;font-weight:820;">Have an idea? Let's talk.</h2>
+            <p style="color:var(--text-soft);font-size:17px;margin:0;">Want to build something — or break something interesting? I'm open to good problems and better conversations.</p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="https://cal.com/charanreddy-27/30min" target="_blank" rel="noopener">📅 Book a call</a>
+              <a class="btn btn-ghost" href="mailto:charanreddychanda@gmail.com">✉️ Email</a>
+              <a class="btn btn-ghost" href="https://github.com/charanreddy-27" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn btn-ghost" href="https://www.linkedin.com/in/chandacharanreddy/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <div style="display:grid;gap:10px;margin-top:14px;">
+              <a class="link-btn" href="https://www.charanreddy.dev" target="_blank" rel="noopener">
+                <span class="ic">🌐</span><span>Portfolio<small>charanreddy.dev — the other 18 projects</small></span>
+              </a>
+              <a class="link-btn" href="https://orcid.org/0009-0003-2414-6717" target="_blank" rel="noopener">
+                <span class="ic">🔬</span><span>Research<small>ORCID 0009-0003-2414-6717</small></span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <form data-contact-form data-to="charanreddychanda@gmail.com" novalidate>
+              <div class="form-field">
+                <label for="a-name">Name</label>
+                <input id="a-name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div class="form-field">
+                <label for="a-email">Email</label>
+                <input id="a-email" name="email" type="email" placeholder="you@email.com" required />
+              </div>
+              <div class="form-field">
+                <label for="a-msg">Message</label>
+                <textarea id="a-msg" name="message" placeholder="What are you building?" required></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit" style="width:100%;">Send message →</button>
+              <p class="form-note">Opens your email client — nothing is stored. Crafted with intent.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="/"><span class="brand-mark">🔐</span><span class="brand-text">Autofill Vault</span></a>
+          <p class="footer-tag">Store your details once. Fill any form in a click. Everything stays on your machine.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Project</h5>
+            <a href="/#features">Features</a>
+            <a href="/#how">How it works</a>
+            <a href="/about-project">About the project</a>
+            <a href="https://github.com/charanreddy-27/Autofill" target="_blank" rel="noopener">GitHub repo ↗</a>
+          </div>
+          <div class="footer-col">
+            <h5>Charan</h5>
+            <a href="/about">About me</a>
+            <a href="https://www.charanreddy.dev" target="_blank" rel="noopener">Portfolio ↗</a>
+            <a href="https://www.linkedin.com/in/chandacharanreddy/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://cal.com/charanreddy-27/30min" target="_blank" rel="noopener">Book a call ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Chanda Charan Reddy · Crafted with intent.</span>
+        <span class="avail"><span class="dot-live"></span> Available for new projects</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

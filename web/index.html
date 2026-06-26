@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autofill Vault — fill any form in one click, 100% on your machine</title>
+  <meta name="description" content="A privacy-first browser extension that stores your details once and autofills any form — job apps, checkouts, logins — in a single click. No server, no sign-up, no cloud. Built by Charan Reddy Chanda." />
+  <meta name="author" content="Chanda Charan Reddy" />
+  <meta name="theme-color" content="#6366f1" />
+  <link rel="canonical" href="https://autofill-vault.vercel.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Autofill Vault" />
+  <meta property="og:title" content="Autofill Vault — fill any form in one click, 100% on your machine" />
+  <meta property="og:description" content="Store your details once, autofill any form in a click. Local-only, no sign-up, works on React/Vue sites. A side project by Charan Reddy Chanda." />
+  <meta property="og:url" content="https://autofill-vault.vercel.app/" />
+  <meta property="og:image" content="https://autofill-vault.vercel.app/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Autofill Vault — fill any form in one click" />
+  <meta name="twitter:description" content="A privacy-first autofill extension. Local-only, no sign-up, works on React/Vue sites." />
+  <meta name="twitter:image" content="https://autofill-vault.vercel.app/assets/og.png" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/icon-128.png" />
+  <link rel="apple-touch-icon" href="assets/icon-128.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;850&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================ NAV ============================ -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/" aria-label="Autofill Vault home">
+        <span class="brand-mark">🔐</span>
+        <span class="brand-text">Autofill Vault <span>/ extension</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="/about-project">The project</a>
+        <a href="/about">About me</a>
+        <a href="https://github.com/charanreddy-27/Autofill" target="_blank" rel="noopener">GitHub ↗</a>
+      </nav>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">🌙</button>
+      <a class="btn btn-primary btn-sm nav-cta" href="https://github.com/charanreddy-27/Autofill" target="_blank" rel="noopener">Get it</a>
+      <button class="nav-burger" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">🔒 Local-first · MV3 browser extension</span>
+        <h1>Stop retyping <span class="grad-text">the same details</span> into every form.</h1>
+        <p class="lead">Autofill Vault stores your name, address, education and logins <strong>once</strong> — then fills any form on any site with one click. No server. No sign-up. No cloud. Everything stays in your browser, on your machine.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="https://github.com/charanreddy-27/Autofill" target="_blank" rel="noopener">⬇ Get the extension</a>
+          <a class="btn btn-ghost btn-lg" href="#how">See how it works</a>
+        </div>
+        <div class="hero-meta">
+          <div><b>1 click</b><span>to fill a whole page</span></div>
+          <div><b>0 servers</b><span>data never leaves your machine</span></div>
+          <div><b>22 field types</b><span>matched automatically</span></div>
+        </div>
+      </div>
+
+      <!-- live CSS mockup of the real product -->
+      <div class="mock-stage reveal">
+        <div class="mock mock-browser">
+          <div class="mock-bar">
+            <span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span>
+            <span class="mock-url">careers.acme.io/apply</span>
+          </div>
+          <div class="mock-body">
+            <div class="faux-form">
+              <div class="faux-grid2">
+                <div class="faux-row"><label>First name</label><div class="faux-input empty" data-fill="Charan">—</div></div>
+                <div class="faux-row"><label>Last name</label><div class="faux-input empty" data-fill="Reddy">—</div></div>
+              </div>
+              <div class="faux-row"><label>Email</label><div class="faux-input empty" data-fill="charanreddychanda@gmail.com">—</div></div>
+              <div class="faux-grid2">
+                <div class="faux-row"><label>Phone</label><div class="faux-input empty" data-fill="+91 •••• ••• ••">—</div></div>
+                <div class="faux-row"><label>City</label><div class="faux-input empty" data-fill="Bangalore">—</div></div>
+              </div>
+              <div class="faux-row"><label>LinkedIn</label><div class="faux-input empty" data-fill="linkedin.com/in/chandacharanreddy">—</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mock-popup">
+          <div class="mp-head"><span class="mp-mark">🔐</span> Autofill Vault</div>
+          <button class="mp-fill" data-demo-fill>⚡ Fill this page</button>
+          <div class="mp-site">Try it — click ⚡ above</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ TRUST ============================ -->
+  <section class="trust">
+    <div class="wrap trust-inner reveal">
+      <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z"/></svg> 100% local storage</span>
+      <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> No sign-up, no account</span>
+      <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg> Works on React &amp; Vue sites</span>
+      <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg> Chrome · Edge · Brave</span>
+      <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.2-1.5 6.2-6.7A5.2 5.2 0 0 0 20 4.8 4.8 4.8 0 0 0 19.9 1S18.6.6 16 2.3a13.4 13.4 0 0 0-7 0C6.4.6 5.1 1 5.1 1A4.8 4.8 0 0 0 5 4.8 5.2 5.2 0 0 0 3.7 8.4c0 5.2 3.2 6.4 6.2 6.7a3.4 3.4 0 0 0-.9 2.6V22"/></svg> Open source · MIT</span>
+    </div>
+  </section>
+
+  <!-- ============================ FEATURES ============================ -->
+  <section id="features" class="section-pad">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow">What it does</span>
+        <h2>A password manager's convenience — for <span class="grad-text">everything else</span> you keep retyping.</h2>
+        <p>Built for anyone who lives in forms: job applications, checkouts, onboarding flows, the same five fields over and over.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature reveal">
+          <div class="ficon">⚡</div>
+          <h3>One-click whole-page fill</h3>
+          <p>Hit the toolbar button or <strong>Alt+Shift+F</strong> and every matching field on the page fills at once. Filled fields flash blue so you can see exactly what happened.</p>
+        </div>
+        <div class="feature reveal">
+          <div class="ficon">🧠</div>
+          <h3>A real matching engine</h3>
+          <p>It doesn't guess on field names alone. It scores each input on its <strong>autocomplete</strong> token, native type, label, placeholder and your own keywords — then fills the best match.</p>
+        </div>
+        <div class="feature reveal">
+          <div class="ficon">🗂️</div>
+          <h3>Your vault, your structure</h3>
+          <p>Personal, Address, Education, Professional — plus any category you add. Rename, recolour, drag-reorder, inline-edit. It autosaves as you type.</p>
+        </div>
+        <div class="feature reveal">
+          <div class="ficon">🔑</div>
+          <h3>Logins, filled smartly</h3>
+          <p>Save site / username / password and fill login forms — even multi-step ones, by finding the username field nearest the password input in document order.</p>
+        </div>
+        <div class="feature reveal">
+          <div class="ficon">🔒</div>
+          <h3>Nothing leaves your machine</h3>
+          <p>All data lives in <code>chrome.storage.local</code> on this profile only. No telemetry, no network calls, no account. Export an encrypted-free JSON backup whenever you want.</p>
+        </div>
+        <div class="feature reveal">
+          <div class="ficon">🌗</div>
+          <h3>Polished, light or dark</h3>
+          <p>Glassmorphism, an animated aurora, copy-to-clipboard on every field, and keyboard shortcuts. The kind of internal tool you'd actually enjoy opening.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ HOW IT WORKS ============================ -->
+  <section id="how" class="section-pad">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Under the hood</span>
+        <h2>Most "autofill" breaks on modern sites. <span class="grad-text">This one doesn't.</span></h2>
+        <p>The interesting engineering is the bit nobody sees: scoring fields, and convincing React it filled them itself.</p>
+      </div>
+      <div class="how-grid">
+        <div class="steps">
+          <div class="step reveal">
+            <div class="num">1</div>
+            <div><h4>Gather every signal</h4><p>For each input it reads name, id, placeholder, <code>aria-label</code>, the linked <code>&lt;label&gt;</code>, <code>data-testid</code> and the autocomplete token — then normalises them into one searchable string.</p></div>
+          </div>
+          <div class="step reveal">
+            <div class="num">2</div>
+            <div><h4>Score the match</h4><p>An autocomplete token match scores 100, a native <code>type="email"</code> scores 60, an exact label/synonym hit 25–50. The highest-scoring vault field above a threshold wins.</p></div>
+          </div>
+          <div class="step reveal">
+            <div class="num">3</div>
+            <div><h4>Fill it so frameworks believe it</h4><p>Setting <code>el.value</code> doesn't update React/Vue state. So it calls the <strong>native value setter</strong> on the prototype, then dispatches real <code>input</code>/<code>change</code> events — exactly like a human typing.</p></div>
+          </div>
+          <div class="step reveal">
+            <div class="num">4</div>
+            <div><h4>Never clobber your work</h4><p>Fields you've already typed into are skipped. <code>&lt;select&gt;</code> dropdowns are matched by option value <em>or</em> visible text. Then a toast tells you how many fields it filled.</p></div>
+          </div>
+        </div>
+
+        <div class="code-card reveal">
+          <div class="code-head">
+            <span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span>
+            <span class="fname">content.js — the React-safe fill</span>
+          </div>
+          <div class="code-body"><pre><span class="c-com">// el.value = "…" won't update React's state.</span>
+<span class="c-com">// Call the prototype's native setter instead.</span>
+<span class="c-key">function</span> <span class="c-fn">setNativeValue</span>(<span class="c-var">el</span>, <span class="c-var">value</span>) {
+  <span class="c-key">const</span> proto = <span class="c-fn">Object.getPrototypeOf</span>(el);
+  <span class="c-key">const</span> desc  = <span class="c-fn">Object.getOwnPropertyDescriptor</span>(proto, <span class="c-str">"value"</span>);
+  <span class="c-key">if</span> (desc &amp;&amp; desc.set) desc.set.<span class="c-fn">call</span>(el, value);
+  <span class="c-key">else</span> el.value = value;
+}
+
+<span class="c-key">function</span> <span class="c-fn">fireEvents</span>(<span class="c-var">el</span>) {
+  el.<span class="c-fn">dispatchEvent</span>(<span class="c-key">new</span> <span class="c-fn">Event</span>(<span class="c-str">"input"</span>,  { bubbles: <span class="c-num">true</span> }));
+  el.<span class="c-fn">dispatchEvent</span>(<span class="c-key">new</span> <span class="c-fn">Event</span>(<span class="c-str">"change"</span>, { bubbles: <span class="c-num">true</span> }));
+}</pre></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ STACK ============================ -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Built with</span>
+        <h2>Deliberately boring tech, doing something clever.</h2>
+        <p>No framework, no build step, no dependencies. Just the platform — which is exactly why it stays fast and easy to audit.</p>
+      </div>
+      <div class="stack-grid">
+        <div class="stack-card reveal"><div class="t">Manifest V3</div><div class="d">Service worker, scripting &amp; contextMenus APIs — the modern Chrome extension model.</div></div>
+        <div class="stack-card reveal"><div class="t">Vanilla JS</div><div class="d">Zero dependencies. Shared <code>common.js</code> runs in pages, content scripts and the worker alike.</div></div>
+        <div class="stack-card reveal"><div class="t">chrome.storage.local</div><div class="d">The whole vault, on-device. Promise-wrapped, live-synced across every open view.</div></div>
+        <div class="stack-card reveal"><div class="t">Modern CSS</div><div class="d"><code>color-mix</code>, glass blur, an animated aurora and theming via custom properties.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ABOUT TEASER ============================ -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="card reveal" style="display:grid;gap:22px;">
+        <div class="section-head" style="margin-bottom:0;">
+          <span class="eyebrow">Who built this</span>
+          <h2>Built by an engineer who got tired of forms.</h2>
+          <p>I'm Charan — an AI &amp; automation engineer in Bangalore. I built production LLM systems (one of them a Springer-published model that reads chest X-rays), and before that wrote real-time control code for jet engines at DRDO. This is the small tool I built for myself between the big ones.</p>
+        </div>
+        <div class="hero-actions" style="margin-top:0;">
+          <a class="btn btn-primary" href="/about">Read my story →</a>
+          <a class="btn btn-ghost" href="/about-project">Why I built this →</a>
+          <a class="btn btn-ghost" href="https://www.charanreddy.dev" target="_blank" rel="noopener">charanreddy.dev ↗</a>
+        </div>
+        <p class="footer-tag" style="max-width:none;">This is one project. There are 18 more (and a few jet engines) over at <a href="https://www.charanreddy.dev" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-weight:700;">charanreddy.dev</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CONTACT CTA ============================ -->
+  <section id="contact" class="section-pad">
+    <div class="wrap">
+      <div class="contact-card reveal">
+        <div class="contact-grid">
+          <div>
+            <span class="eyebrow">Let's talk</span>
+            <h2 style="font-size:clamp(26px,3.5vw,36px);letter-spacing:-.8px;margin:16px 0 10px;font-weight:820;">Have an idea — or want to break something interesting?</h2>
+            <p style="color:var(--text-soft);font-size:17px;margin:0;">I'm open to interesting work and good conversations. Tell me what you're building, or just say hi.</p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="https://cal.com/charanreddy-27/30min" target="_blank" rel="noopener">📅 Book a call</a>
+              <a class="btn btn-ghost" href="mailto:charanreddychanda@gmail.com">✉️ Email me</a>
+              <a class="btn btn-ghost" href="https://github.com/charanreddy-27" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn btn-ghost" href="https://www.linkedin.com/in/chandacharanreddy/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+          <div>
+            <form data-contact-form data-to="charanreddychanda@gmail.com" novalidate>
+              <div class="form-field">
+                <label for="c-name">Name</label>
+                <input id="c-name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div class="form-field">
+                <label for="c-email">Email</label>
+                <input id="c-email" name="email" type="email" placeholder="you@email.com" required />
+              </div>
+              <div class="form-field">
+                <label for="c-msg">Message</label>
+                <textarea id="c-msg" name="message" placeholder="What's on your mind?" required></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit" style="width:100%;">Send message →</button>
+              <p class="form-note">Opens your email client — no data is stored or sent to a server. Crafted with intent.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="/"><span class="brand-mark">🔐</span><span class="brand-text">Autofill Vault</span></a>
+          <p class="footer-tag">Store your details once. Fill any form in a click. Everything stays on your machine.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Project</h5>
+            <a href="#features">Features</a>
+            <a href="#how">How it works</a>
+            <a href="/about-project">About the project</a>
+            <a href="https://github.com/charanreddy-27/Autofill" target="_blank" rel="noopener">GitHub repo ↗</a>
+          </div>
+          <div class="footer-col">
+            <h5>Charan</h5>
+            <a href="/about">About me</a>
+            <a href="https://www.charanreddy.dev" target="_blank" rel="noopener">Portfolio ↗</a>
+            <a href="https://www.linkedin.com/in/chandacharanreddy/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://cal.com/charanreddy-27/30min" target="_blank" rel="noopener">Book a call ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Chanda Charan Reddy · Crafted with intent.</span>
+        <span class="avail"><span class="dot-live"></span> Available for new projects</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
