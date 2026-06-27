@@ -6,7 +6,7 @@
 
 A privacy-first browser extension that ends the tyranny of retyping your name, email, phone, address and logins into every form on the internet — without sending a single byte to anyone's server.
 
-**[🌐 Live showcase](https://autofill-vault.vercel.app)** · **[📓 The story](https://autofill-vault.vercel.app/about-project)** · **[👋 About me](https://autofill-vault.vercel.app/about)** · **[💻 Source](https://github.com/charanreddy-27/Autofill)**
+**[🌐 Live showcase](https://autofill-charan.vercel.app/)** · **[📓 The story](https://autofill-charan.vercel.app/about-project)** · **[👋 About me](https://autofill-charan.vercel.app/about)** · **[💻 Source](https://github.com/charanreddy-27/Autofill)**
 
 ![Autofill Vault — fill any form in one click, on your machine](web/assets/og.png)
 

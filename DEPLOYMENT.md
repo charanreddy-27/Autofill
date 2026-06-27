@@ -66,7 +66,7 @@ Because you run it from inside `web/`, the root-directory problem disappears —
 
 ## Step 4 — Point the metadata at your real URL
 
-Once you know your production URL (say `https://autofill-vault.vercel.app`, or a custom domain), replace the placeholder `https://autofill-vault.vercel.app` everywhere it appears so social cards and SEO use the right address.
+Once you know your production URL (say `https://autofill-charan.vercel.app/`, or a custom domain), replace the placeholder `https://autofill-charan.vercel.app/` everywhere it appears so social cards and SEO use the right address.
 
 Find them with a quick search for `autofill-vault.vercel.app` in:
 
